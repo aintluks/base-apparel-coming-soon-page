@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  order: -1;
+  background-color: hsl(0, 0%, 100%);
+  padding: 2.5rem;
+}
+
+.img-home {
+  width: 100%;
+  height: 250px;
+  background: no-repeat center/100% url("../images/hero-mobile.jpg");
+}
+
+.home {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1rem;
+}
+
+.title-first {
+  font-weight: 300;
+  color: hsl(0, 74%, 74%);
+}
+
+.home-description {
+  width: 80%;
+  margin: 2rem auto;
+  font-weight: 600;
+  color: hsl(0, 74%, 74%);
+  font-size: 16px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 425px;
+  margin: 0 auto 4rem;
+}
+
+input {
+  width: 70%;
+  border-radius: 25px;
+  border-color: hsl(0, 80%, 86%);
+  padding: 1rem;
+}
+
+input::placeholder {
+  color: hsl(0, 74%, 74%);
+  font-weight: 600;
+}
+
+input:focus {
+  outline: none;
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  height: 55px;
+  width: 75px;
+  border-radius: 30px;
+  background: no-repeat center/15% url("../images/icon-arrow.svg"),
+    linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+@media (min-width: 961px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "header image"
+      "content image";
+  }
+
+  .img-home {
+    grid-area: image;
+    height: 100vh;
+    background: no-repeat center/100% url("../images/hero-desktop.jpg");
+  }
+
+  .header {
+    grid-area: header;
+    margin-left: 1.75rem;
+  }
+
+  .home {
+    grid-area: content;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .home-description {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  .input {
+    margin-left: 0;
+    display: block;
+  }
+
+  .button {
+    right: 5rem;
+  }
+}
